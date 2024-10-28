@@ -4,7 +4,7 @@ import { FaThumbsUp } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Button, Textarea } from "flowbite-react";
 
-export default function Comment({ comment, onLike, onEdit }) {
+export default function Comment({ comment, onLike, onEdit, onDelete }) {
   const [user, setUser] = useState({});
   const [isEditing, setIsEditing] = useState(false);
   const { currentUser } = useSelector((state) => state.user);
@@ -50,6 +50,7 @@ export default function Comment({ comment, onLike, onEdit }) {
     }
   };
 
+  
   return (
     <div className="flex p-4 border-b dark:border-gray-600 text-sm">
       <div className="flex-shrink-0 mr-3">
@@ -71,34 +72,30 @@ export default function Comment({ comment, onLike, onEdit }) {
 
         {isEditing ? (
           <>
-            <Textarea
-              className="mb-2"
+             <Textarea
+              className='mb-2'
               value={editedContent}
-              maxLength="200"
               onChange={(e) => setEditedContent(e.target.value)}
             />
-            <p className="text-gray-500 text-xs mb-2">
-              {200 - editedContent.length} characters remaining
-            </p>
-            <div className="flex justify-end gap-2 text-xs">
+            <div className='flex justify-end gap-2 text-xs'>
               <Button
-                type="button"
-                size="sm"
-                gradientDuoTone="purpleToBlue"
+                type='button'
+                size='sm'
+                gradientDuoTone='purpleToBlue'
                 onClick={handleSave}
               >
                 Save
               </Button>
               <Button
-                type="button"
-                size="sm"
-                gradientDuoTone="purpleToBlue"
+                type='button'
+                size='sm'
+                gradientDuoTone='purpleToBlue'
                 outline
                 onClick={() => setIsEditing(false)}
               >
                 Cancel
               </Button>
-            </div>
+            </div> 
           </>
         ) : (
           <>
@@ -123,13 +120,22 @@ export default function Comment({ comment, onLike, onEdit }) {
               </p>
               {currentUser &&
                 (currentUser._id === comment.userId || currentUser.isAdmin) && (
-                  <button
-                    type="button"
-                    className="text-gray-400 hover:text-blue-500"
-                    onClick={handleEdit}
-                  >
-                    Edit
-                  </button>
+                  <>
+                    <button
+                      type='button'
+                      onClick={handleEdit}
+                      className='text-gray-400 hover:text-blue-500'
+                    >
+                      Edit
+                    </button>
+                    <button
+                      type='button'
+                      onClick={() => onDelete(comment._id)}
+                      className='text-gray-400 hover:text-red-500'
+                    >
+                      Delete
+                    </button>
+                  </>
                 )}
             </div>
           </>
