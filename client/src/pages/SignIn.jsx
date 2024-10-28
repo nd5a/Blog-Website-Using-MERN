@@ -63,6 +63,10 @@ export default function SignIn() {
         {/* right */}
 
         <div className="flex-1">
+        <div className="flex self-center justify-center text-3xl pb-3">
+            <h1>Sign In</h1>
+          </div>
+          
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <div>
               <Label value="Your Email" />
@@ -100,7 +104,7 @@ export default function SignIn() {
           </form>
           <div className="flex gap-2 text-sm mt-5">
             <span>Don't Have an Account ?</span>
-            <Link to="/sign-up" className="text-blue-500">
+            <Link to="/sign-up" className="text-blue-500 hover:underline">
               Sign Up
             </Link>
           </div>

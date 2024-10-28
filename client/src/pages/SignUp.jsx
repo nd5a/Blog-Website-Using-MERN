@@ -51,13 +51,16 @@ export default function SignUp() {
             Blog
           </Link>
           <p className="text-sm mt-5">
-            This is DN's project. You can signin with your email and password or
+            This is DN's project. You can signup with your email and password or
             with Google
           </p>
         </div>
         {/* right */}
 
         <div className="flex-1">
+          <div className="flex self-center justify-center text-3xl pb-3">
+            <h1>Sign Up</h1>
+          </div>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <div>
               <Label value="Your Username" />
@@ -104,7 +107,7 @@ export default function SignUp() {
           </form>
           <div className="flex gap-2 text-sm mt-5">
             <span>Do you Have an Account ?</span>
-            <Link to="/sign-in" className="text-blue-500">
+            <Link to="/sign-in" className="text-blue-500 hover:underline">
               Sign In
             </Link>
           </div>
