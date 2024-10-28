@@ -16,7 +16,7 @@ export default function PostCard({ post }) {
 
       {/* Post content */}
       <div className="p-4 flex flex-col gap-2">
-        <p className="text-lg font-semibold  line-clamp-2 group-hover:text-teal-600 transition-colors duration-300">
+        <p className="text-lg font-semibold  line-clamp-2 group-hover:text-teal-500 transition-colors duration-300">
           {post.title}
         </p>
         <span className="italic text-sm text-gray-500">{post.category}</span>
