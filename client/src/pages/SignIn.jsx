@@ -50,10 +50,12 @@ export default function SignIn() {
         {/* left */}
         <div className="flex-1">
           <Link to="" className="font-bold dark:text-white text-4xl">
-            <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-lg text-white ">
-              DN's{" "}
-            </span>
-            Blog
+          <span className="font-bold px-3 py-2 bg-gradient-to-r from-pink-500 to-orange-500 rounded-lg text-white ">
+          DN's
+        </span>{" "}
+        <span className="bg-gradient-to-r from-orange-500  to-pink-500 inline-block text-transparent bg-clip-text">
+          Blog
+        </span>
           </Link>
           <p className="text-sm mt-5">
             This is DN's project. You can signin with your email and password or

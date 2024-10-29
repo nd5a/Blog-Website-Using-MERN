@@ -17,7 +17,12 @@ export default function Home() {
   return (
     <div>
       <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto ">
-        <h1 className="text-3xl font-bold lg:text-6xl">Welcome to my Blog</h1>
+        <h1 className="text-3xl font-bold lg:text-6xl">Welcome to  <span className="font-bold px-3 py-2 bg-gradient-to-r from-pink-500 to-orange-500 rounded-lg text-white ">
+          DN's
+        </span>{" "}
+        <span className="bg-gradient-to-r from-orange-500  to-pink-500 inline-block text-transparent bg-clip-text">
+          Blog
+        </span></h1>
         <p className="text-gray-500 text-xs sm:text-sm">
           Here you'll find a variety of articles and tutorials on topics such as
           web development, software engineering, and programming languages.
@@ -37,7 +42,7 @@ export default function Home() {
         {posts && posts.length > 0 && (
           <div className="flex flex-col gap-6">
             <h2 className="text-2xl font-semibold text-center">Recent Posts</h2>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center">
               {posts.map((post) => (
                 <PostCard key={post._id} post={post} />
               ))}
