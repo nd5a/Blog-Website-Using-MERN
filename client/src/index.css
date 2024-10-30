@@ -41,3 +41,41 @@ body{
   .dark .post-content a {
     color: red;
   }
+  .blinking-cursor {
+    animation: blink 1.2s steps(2, start) infinite;
+    color: #00c8ff;
+  }
+  
+  @keyframes blink {
+    from, to {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  
+.scroll-to-top {
+  position: fixed;
+  bottom: 50px; /* Position from the bottom */
+  right: 55px; /* Position from the right */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.scroll-button {
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 50%; /* Circular button */
+  width: 50px; /* Width of the button */
+  height: 50px; /* Height of the button */
+  font-size: 24px; /* Font size for the arrow */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-button:hover {
+  background-color: #004bb5; /* Darker blue on hover */
+}

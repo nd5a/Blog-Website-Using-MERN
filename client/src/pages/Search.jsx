@@ -100,6 +100,31 @@ export default function Search() {
     }
   };
 
+  
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
+
   return (
     <div className='flex flex-col md:flex-row'>
       <div className='p-7 border-b md:border-r md:min-h-screen border-gray-500'>
@@ -163,6 +188,13 @@ export default function Search() {
             </button>
           )}
         </div>
+      </div>
+      <div className="scroll-to-top">
+        {isVisible && (
+          <button onClick={scrollToTop} className="bg-gradient-to-r from-yellow-500 to-pink-500 text-white font-bold py-2 px-4 rounded scroll-button">
+            <i class="fa-solid fa-up-long"></i>
+          </button>
+        )}
       </div>
     </div>
   );

@@ -18,6 +18,7 @@ export default function SignUp() {
     }
     try {
       setLoading(true);
+      
       setErrorMessage(null);
       const res = await fetch("/api/auth/signup", {
         method: "POST",

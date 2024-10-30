@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
     profilePicture: {
       type: String,
       default:
-        "https://static-00.iconduck.com/assets.00/profile-circle-icon-2048x2048-cqe5466q.png",
+        "https://static-00.iconduck.com/assets.00/user-icon-2048x2048-ihoxz4vq.png",
     },
     isAdmin: {
       type: Boolean,

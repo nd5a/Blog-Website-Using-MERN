@@ -48,11 +48,6 @@ export default function Header() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!searchTerm || searchTerm.trim() === "") {
-      alert("Please enter a search term");
-      return;
-    }
-
     const urlParams = new URLSearchParams(location.search);
     urlParams.set("searchTerm", searchTerm);
     const searchQuery = urlParams.toString();
@@ -73,19 +68,18 @@ export default function Header() {
           Blog
         </span>
       </Link>
-      <form onSubmit={handleSubmit} className="relative">
+      <form onSubmit={handleSubmit}>
         <TextInput
           type="text"
           placeholder="Search..."
+          // rightIcon={AiOutlineSearch}
+          className="hidden lg:inline"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button
-          type="submit"
-          className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 hover:text-teal-500"
-        >
-          <AiOutlineSearch size={20} />
-        </button>
+        <Button type="submit" className="w-12 h-10 lg:hidden" color="gray" pill>
+          <AiOutlineSearch />
+        </Button>
       </form>
 
       <div className="flex  gap-2 md:order-2">
@@ -173,7 +167,7 @@ export default function Header() {
           </Link>
         </Navbar.Link>
         <Navbar.Link active={path === "/about"} as={"div"}>
-        <Link to="/about" className="relative group">
+          <Link to="/about" className="relative group">
             <span className="hover:text-blue-600 font-bold">About</span>
             <span
               className={`absolute left-0 -bottom-1 w-full h-0.5 bg-blue-600 transition-transform duration-300 ease-in-out ${
@@ -183,7 +177,7 @@ export default function Header() {
           </Link>
         </Navbar.Link>
         <Navbar.Link active={path === "/projects"} as={"div"}>
-        <Link to="/projects" className="relative group">
+          <Link to="/projects" className="relative group">
             <span className="hover:text-blue-600 font-bold">Project</span>
             <span
               className={`absolute left-0 -bottom-1 w-full h-0.5 bg-blue-600 transition-transform duration-300 ease-in-out ${
@@ -193,7 +187,7 @@ export default function Header() {
           </Link>
         </Navbar.Link>
         <Navbar.Link active={path === "/contact"} as={"div"}>
-        <Link to="/contact" className="relative group">
+          <Link to="/contact" className="relative group">
             <span className="hover:text-blue-600 font-bold">Contact</span>
             <span
               className={`absolute left-0 -bottom-1 w-full h-0.5 bg-blue-600 transition-transform duration-300 ease-in-out ${
