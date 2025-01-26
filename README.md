@@ -95,12 +95,12 @@ cd Blog-Website-Using-MERN
 ```
 Blog-Website-Using-MERN/
 │
-├── backend/         # Backend API code
+├── api(backend)/         # Backend API code
 │   ├── models/      # Mongoose models
 │   ├── routes/      # API routes
 │   └── server.js    # Main server file
 │
-├── frontend/        # Frontend React code
+├── client(frontend)/        # Frontend React code
 │   ├── src/
 │   │   ├── components/  # React components
 │   │   ├── pages/       # React pages
@@ -150,7 +150,7 @@ If you like this project, please give it a **star** ⭐ on GitHub to show your s
 ## 📞 Contact
 
 Feel free to reach out if you have any questions or suggestions:
-- **Email**: [your-email@example.com](mailto:dnnakrani21@gmail.com)
+- **Email**: [dnnakrani21@gmail.com](mailto:dnnakrani21@gmail.com)
 - **GitHub Issues**: [Open an issue](https://github.com/nd5a/Blog-Website-Using-MERN/issues)
 
 ---
